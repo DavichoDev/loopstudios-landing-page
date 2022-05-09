@@ -5,7 +5,10 @@
     margin-bottom: 5rem;
 
     .our-creations-content {
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         .heading {
             font-size: 3.5rem;
             margin: 2rem 0;
@@ -14,7 +17,6 @@
 
         .creations {
             padding: 0 0 2rem 0;
-
             .creation {
                 padding: 1rem;
                 position: relative;
@@ -37,7 +39,8 @@
 
                 &::before {
                     content: "";
-                    background-color: rgba(0, 0, 0, .4);
+                    background-color: v.$black;
+                    opacity: .4;
                     position: absolute;
                     top: 0;
                     right: 0;
@@ -47,7 +50,14 @@
                 }
             }
         }
-
-        .button {}
+        .button {
+            text-transform: uppercase;
+            color: v.$black;
+            letter-spacing: .5rem;
+            font-weight: bolder;
+            line-height: 0;
+            padding: 2rem 4rem;
+            border: .1rem solid v.$black;
+        }
     }
 }
