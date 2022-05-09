@@ -1,0 +1,53 @@
+@use 'variables' as v; 
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body {
+    font-family: v.$fuente_principal;
+    font-size: 1.5rem;
+}
+h1, h2, h3 {
+    font-family: v.$fuente_secundaria;
+    color: v.$black;
+    margin: 0;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3.6rem;
+}
+h3 {
+    font-size: 3.2rem;
+}
+a {
+    font-family: v.$fuente_secundaria;
+}
+p {
+    font-family: v.$fuente_principal;
+    color: v.$veryDarkGray;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+.contenedor {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}

@@ -1,0 +1,53 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.our-creations {
+    margin-bottom: 5rem;
+
+    .our-creations-content {
+
+        .heading {
+            font-size: 3.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .creations {
+            padding: 0 0 2rem 0;
+
+            .creation {
+                padding: 1rem;
+                position: relative;
+
+                &:first-child {
+                    padding: 2rem 1rem 1rem 1rem;
+                    &::before {
+                        margin: 2rem 1rem 1rem 1rem;
+                    }    
+                }
+
+                h1 {
+                    color: v.$white;
+                    font-size: 2.5rem;
+                    position: absolute;
+                    left: 10%;
+                    top: 45%;
+                    width: 40%;
+                }
+
+                &::before {
+                    content: "";
+                    background-color: rgba(0, 0, 0, .4);
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    margin: 1rem;
+                }
+            }
+        }
+
+        .button {}
+    }
+}
