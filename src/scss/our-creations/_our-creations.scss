@@ -2,62 +2,93 @@
 @use 'base/mixins' as m;
 
 .our-creations {
-    margin-bottom: 8.5rem;
 
     .our-creations-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        .heading {
-            font-size: 3.5rem;
-            margin: 2rem 0;
-            text-align: center;
-        }
+        position: relative;
+        padding-bottom: 10rem;
 
-        .creations {
-            padding: 0 0 2rem 0;
-            .creation {
-                padding: 1rem;
-                position: relative;
+        .content-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
 
-                &:first-child {
-                    padding: 2rem 1rem 1rem 1rem;
-                    &::before {
-                        margin: 2rem 1rem 1rem 1rem;
-                    }    
-                }
+            @include m.tablet {
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
 
-                h1 {
-                    color: v.$white;
-                    font-size: 2.5rem;
-                    position: absolute;
-                    left: 10%;
-                    top: 45%;
-                    width: 40%;
-                }
+            .heading {
+                font-size: 3.5rem;
+                margin: 2rem 0;
+            }
 
-                &::before {
-                    content: "";
-                    background-color: v.$black;
-                    opacity: .4;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    left: 0;
-                    bottom: 0;
-                    margin: 1rem;
+            .button {
+                text-transform: uppercase;
+                color: v.$black;
+                letter-spacing: .5rem;
+                font-weight: bolder;
+                line-height: 0;
+                padding: 2rem 4rem;
+                border: .1rem solid v.$black;
+                position: absolute;
+                bottom: 3rem;
+
+                @include m.tablet {
+                    position: initial;
                 }
             }
         }
-        .button {
-            text-transform: uppercase;
-            color: v.$black;
-            letter-spacing: .5rem;
-            font-weight: bolder;
-            line-height: 0;
-            padding: 2rem 4rem;
-            border: .1rem solid v.$black;
+
+        .creations {
+            display: grid;
+            width: 100%;
+            row-gap: 2rem;
+            @include m.tablet {
+                grid-template-columns: repeat(2, auto);
+                gap: 2.5rem;
+            }
+            @include m.desktop {
+                grid-template-columns: repeat(4, auto);
+                gap: 2.5rem;
+            }
+
+            .creation {
+                position: relative;
+                cursor: pointer;
+                height: 100%;
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .creation-mask {
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    background: rgba(0, 0, 0, .3);
+                    transition: .2s ease-in-out all;
+                    left: 0;
+                    top: 0;
+                }
+
+                h1 {
+                    position: absolute;
+                    font-size: 2.8rem;
+                    left: 2rem;
+                    bottom: 1rem;
+                    width: 50%;
+                    text-transform: uppercase;
+                    color: v.$white;
+                    transition: .2s ease-in-out all;
+                }
+            }
         }
     }
 }

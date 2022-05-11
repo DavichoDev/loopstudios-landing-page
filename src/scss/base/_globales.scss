@@ -29,7 +29,7 @@ h3 {
     font-size: 3.2rem;
 }
 a {
-    font-family: v.$fuente_secundaria;
+    font-family: v.$fuente_principal;
 }
 p {
     font-family: v.$fuente_principal;
@@ -38,9 +38,9 @@ p {
     line-height: 1.5;
 }
 .contenedor {
-    width: 95%;
-    max-width: 1200px;
+    width: 90%;
     margin: 0 auto;
+    max-width: 1300px;
 }
 
 a {
