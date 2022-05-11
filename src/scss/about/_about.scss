@@ -3,20 +3,55 @@
 
 .about {
     margin: 10rem 0 5rem 0;
+    @include m.desktop {
+        margin: 10rem 0;
+    }
     .about-content {
-
+        @include m.desktop {
+            background-image: url(../img/desktop/image-interactive.jpg);
+            background-repeat: no-repeat;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(6, 10rem);
+        }
+        
         .imagen {
+            @include m.desktop {
+                display: none;
+            }
             padding: 0 2rem;
+            img {
+                margin: 0 auto;
+            }
         }
         .text {
             padding: 3rem 3rem;
             text-align: center;
+            @include m.desktop {
+                grid-column: 4/8;
+                grid-row: 3;
+                background-color: v.$white;
+                height: fit-content;
+                padding: 5rem;
+            }
             h1 {
                 font-size: 3.5rem;
                 margin: 2rem 0;
+                @include m.desktop {
+                    font-size: 4.8rem;
+                    text-align: left;
+                }
             }
             p {
                 line-height: 2;
+                @include m.desktop {
+                    text-align: justify;
+                }
+            }
+            @include m.desktop {
+                h1, p {
+                    padding: 0 2.5rem;
+                }
             }
         }
     }
