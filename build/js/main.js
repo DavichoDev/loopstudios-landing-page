@@ -17,3 +17,10 @@ const close = (menuMobile) => {
     menuMobile.classList.remove('opened');
     body.style.overflow = 'visible';
 };
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024) {
+        const menuMobile = document.getElementById('#mobile-menu');
+        close(menuMobile);
+    }
+})
